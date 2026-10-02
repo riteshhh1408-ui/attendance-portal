@@ -1420,3 +1420,1210 @@ input {
   opacity: 0.6;
   cursor: not-allowed;
 }
+/* =========================================================
+   PREMIUM ATTENDANCE PORTAL UI
+   Liquid Glass + Modern SaaS
+   ========================================================= */
+
+:root {
+  --primary: #1677ff;
+  --primary-dark: #0f63dc;
+  --primary-soft: #eaf3ff;
+
+  --text: #172033;
+  --muted: #7b8799;
+
+  --surface: rgba(255, 255, 255, 0.78);
+  --surface-solid: #ffffff;
+  --border: rgba(145, 158, 180, 0.18);
+
+  --green: #16a36a;
+  --red: #e5484d;
+
+  --shadow-sm: 0 4px 18px rgba(30, 55, 90, 0.06);
+  --shadow-md: 0 12px 35px rgba(30, 55, 90, 0.09);
+  --shadow-lg: 0 22px 60px rgba(30, 55, 90, 0.12);
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+}
+
+/* ---------- GLOBAL ---------- */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "SF Pro Display",
+    "Segoe UI",
+    sans-serif;
+
+  background:
+    radial-gradient(
+      circle at 10% 0%,
+      rgba(92, 154, 255, 0.12),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(154, 113, 255, 0.08),
+      transparent 26%
+    ),
+    #f5f7fb;
+
+  color: var(--text);
+}
+
+/* ---------- SCROLLBAR ---------- */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(90, 105, 130, 0.25);
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(90, 105, 130, 0.4);
+}
+
+/* =========================================================
+   LOGIN
+   ========================================================= */
+
+.login-page {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(40, 125, 255, 0.18),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 75%,
+      rgba(130, 95, 255, 0.15),
+      transparent 30%
+    ),
+    linear-gradient(135deg, #f7faff, #eef4ff);
+}
+
+.login-page::before,
+.login-page::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  pointer-events: none;
+}
+
+.login-page::before {
+  width: 280px;
+  height: 280px;
+  background: rgba(40, 130, 255, 0.16);
+  top: -100px;
+  left: -80px;
+}
+
+.login-page::after {
+  width: 300px;
+  height: 300px;
+  background: rgba(135, 90, 255, 0.12);
+  bottom: -120px;
+  right: -80px;
+}
+
+.login-card {
+  position: relative;
+  z-index: 2;
+
+  width: min(430px, calc(100% - 32px));
+  padding: 42px;
+
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 24px;
+
+  box-shadow:
+    0 25px 80px rgba(30, 70, 120, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.logo-box {
+  width: 58px;
+  height: 58px;
+
+  margin: 0 auto 20px;
+
+  border-radius: 17px;
+
+  background: linear-gradient(
+    145deg,
+    #2184ff,
+    #1261d6
+  );
+
+  box-shadow:
+    0 10px 25px rgba(22, 119, 255, 0.28),
+    inset 0 1px 1px rgba(255, 255, 255, 0.45);
+}
+
+.login-card h1 {
+  font-size: 28px;
+  letter-spacing: -0.7px;
+}
+
+.subtitle {
+  color: #7a8699;
+  font-size: 14px;
+}
+
+.login-card label {
+  color: #354156;
+  font-size: 13px;
+}
+
+.input-box {
+  height: 48px;
+
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(130, 145, 170, 0.22);
+
+  border-radius: 12px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.input-box:focus-within {
+  background: white;
+  border-color: rgba(22, 119, 255, 0.55);
+
+  box-shadow:
+    0 0 0 4px rgba(22, 119, 255, 0.08);
+}
+
+.login-card button {
+  height: 48px;
+  border-radius: 12px;
+
+  background: linear-gradient(
+    135deg,
+    #2184ff,
+    #1261d6
+  );
+
+  box-shadow:
+    0 10px 24px rgba(22, 119, 255, 0.23);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.login-card button:hover {
+  background: linear-gradient(
+    135deg,
+    #2184ff,
+    #0f59c5
+  );
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 14px 30px rgba(22, 119, 255, 0.28);
+}
+
+.demo-login {
+  background: rgba(238, 245, 255, 0.7);
+  border: 1px solid rgba(22, 119, 255, 0.08);
+  border-radius: 12px;
+}
+
+/* =========================================================
+   MAIN DASHBOARD
+   ========================================================= */
+
+.dashboard {
+  background:
+    radial-gradient(
+      circle at 70% 0%,
+      rgba(80, 145, 255, 0.08),
+      transparent 30%
+    ),
+    #f5f7fb;
+}
+
+/* ---------- SIDEBAR ---------- */
+
+.dashboard aside {
+  width: 250px;
+
+  margin: 14px 0 14px 14px;
+  padding: 22px 14px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.94),
+      rgba(247, 250, 255, 0.88)
+    );
+
+  color: var(--text);
+
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 22px;
+
+  box-shadow:
+    0 12px 40px rgba(40, 70, 110, 0.08),
+    inset 0 1px 0 white;
+
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+}
+
+.brand {
+  color: #162238;
+  padding: 10px 12px 25px;
+
+  font-size: 20px;
+  letter-spacing: -0.4px;
+}
+
+.dashboard nav {
+  gap: 6px;
+}
+
+.dashboard nav a {
+  position: relative;
+
+  padding: 12px 14px;
+
+  border-radius: 12px;
+
+  color: #66748a;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.dashboard nav a:hover {
+  background: rgba(22, 119, 255, 0.07);
+  color: var(--primary);
+  transform: translateX(2px);
+}
+
+.dashboard nav a.active {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(30, 130, 255, 0.16),
+      rgba(30, 130, 255, 0.08)
+    );
+
+  color: var(--primary);
+
+  box-shadow:
+    inset 0 0 0 1px rgba(22, 119, 255, 0.08);
+}
+
+.dashboard nav a.active::before {
+  content: "";
+
+  position: absolute;
+  left: 5px;
+  top: 9px;
+  bottom: 9px;
+
+  width: 3px;
+
+  border-radius: 10px;
+
+  background: var(--primary);
+}
+
+/* ---------- MAIN ---------- */
+
+.dashboard main {
+  padding: 28px 34px;
+}
+
+.dashboard header {
+  padding: 16px 20px;
+
+  margin-bottom: 25px;
+
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 18px;
+
+  box-shadow: var(--shadow-sm);
+}
+
+.dashboard header h2 {
+  font-size: 27px;
+  letter-spacing: -0.7px;
+}
+
+.teacher {
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.75);
+  border-color: rgba(130, 145, 170, 0.16);
+
+  box-shadow: 0 4px 15px rgba(30, 60, 100, 0.04);
+}
+
+/* ---------- STAT CARDS ---------- */
+
+.stats {
+  gap: 16px;
+}
+
+.stat-card {
+  position: relative;
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 18px;
+
+  padding: 22px;
+
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.stat-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 100px;
+  height: 100px;
+
+  right: -40px;
+  top: -40px;
+
+  border-radius: 50%;
+
+  background: rgba(22, 119, 255, 0.08);
+  filter: blur(8px);
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.stat-card strong {
+  font-size: 30px;
+  letter-spacing: -1px;
+}
+
+/* ---------- CONTENT ---------- */
+
+.content-card {
+  background: rgba(255, 255, 255, 0.76);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 18px;
+
+  box-shadow: var(--shadow-sm);
+}
+
+/* =========================================================
+   COMMON PAGE STYLE
+   ========================================================= */
+
+.attendance-page,
+.students-page,
+.reports-page,
+.timetable-page {
+  background:
+    radial-gradient(
+      circle at 90% 0%,
+      rgba(70, 140, 255, 0.08),
+      transparent 25%
+    ),
+    #f5f7fb;
+}
+
+/* ---------- PAGE TITLES ---------- */
+
+.page-top h2,
+.students-title h2,
+.reports-title h2,
+.timetable-title h2 {
+  font-size: 30px;
+  letter-spacing: -0.9px;
+}
+
+.page-top p,
+.students-title p,
+.reports-title p,
+.timetable-title p {
+  color: #7c8799;
+}
+
+/* =========================================================
+   GLASS CARDS
+   ========================================================= */
+
+.attendance-controls,
+.attendance-card,
+.student-form-card,
+.students-table-card,
+.upload-card,
+.preview-card,
+.report-filters,
+.report-table-card,
+.timetable-card,
+.report-summary > div,
+.report-days button,
+.summary-card {
+  background: rgba(255, 255, 255, 0.76);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.9);
+
+  box-shadow: var(--shadow-sm);
+
+  border-radius: 18px;
+}
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
+
+.control-group select,
+.control-group input,
+.students-controls select,
+.student-form-card input,
+.report-filters select {
+  height: 46px;
+
+  background: rgba(255, 255, 255, 0.72);
+
+  border: 1px solid rgba(120, 140, 170, 0.2);
+
+  border-radius: 11px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.control-group select:focus,
+.control-group input:focus,
+.students-controls select:focus,
+.student-form-card input:focus,
+.report-filters select:focus {
+  background: white;
+
+  border-color: rgba(22, 119, 255, 0.55);
+
+  box-shadow:
+    0 0 0 4px rgba(22, 119, 255, 0.08);
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.save-button,
+.export-button,
+.import-button,
+.upload-button,
+.student-form-card form button[type="submit"],
+.no-students button {
+  background:
+    linear-gradient(
+      135deg,
+      #2184ff,
+      #1261d6
+    );
+
+  border-radius: 11px;
+
+  box-shadow:
+    0 8px 20px rgba(22, 119, 255, 0.18);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.save-button:hover,
+.export-button:hover,
+.import-button:hover,
+.upload-button:hover,
+.student-form-card form button[type="submit"]:hover,
+.no-students button:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #2184ff,
+      #0f59c5
+    );
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 12px 25px rgba(22, 119, 255, 0.25);
+}
+
+/* =========================================================
+   STUDENTS
+   ========================================================= */
+
+.students-controls {
+  padding: 18px;
+
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+
+  box-shadow: var(--shadow-sm);
+}
+
+.student-count {
+  background: rgba(232, 242, 255, 0.7);
+  border: 1px solid rgba(22, 119, 255, 0.1);
+
+  border-radius: 12px;
+}
+
+.student-form-card {
+  padding: 25px;
+}
+
+.student-form-card h3 {
+  font-size: 19px;
+  letter-spacing: -0.3px;
+}
+
+.students-table-header {
+  background: rgba(244, 247, 252, 0.75);
+}
+
+.students-table-row {
+  transition: background 0.18s ease;
+}
+
+.students-table-row:hover {
+  background: rgba(232, 241, 255, 0.42);
+}
+
+.student-actions button {
+  border-radius: 9px;
+
+  background: rgba(255, 255, 255, 0.75);
+
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.student-actions button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 14px rgba(30, 60, 100, 0.08);
+}
+
+.student-actions .delete-student {
+  color: #df4247;
+}
+
+/* =========================================================
+   ATTENDANCE
+   ========================================================= */
+
+.attendance-card-header {
+  padding: 22px 25px;
+
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.attendance-card-header > span {
+  border-radius: 20px;
+
+  background: rgba(22, 119, 255, 0.09);
+  color: var(--primary);
+}
+
+.student-header {
+  background: rgba(244, 247, 252, 0.75);
+}
+
+.student-row {
+  transition: background 0.18s ease;
+}
+
+.student-row:hover {
+  background: rgba(235, 243, 255, 0.45);
+}
+
+.status-present,
+.status-absent,
+.report-status-present,
+.report-status-absent {
+  border-radius: 20px;
+}
+
+.status-present {
+  background: rgba(22, 163, 106, 0.1);
+}
+
+.status-absent {
+  background: rgba(229, 72, 77, 0.1);
+}
+
+/* =========================================================
+   REPORTS
+   ========================================================= */
+
+.report-days button {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.report-days button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.report-days button.selected-day {
+  border: 1px solid rgba(22, 119, 255, 0.55);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(22, 119, 255, 0.1),
+      rgba(255, 255, 255, 0.7)
+    );
+
+  box-shadow:
+    0 8px 22px rgba(22, 119, 255, 0.08);
+}
+
+.report-table-header {
+  background: rgba(244, 247, 252, 0.75);
+}
+
+.report-table-row {
+  transition: background 0.18s ease;
+}
+
+.report-table-row:hover {
+  background: rgba(235, 243, 255, 0.45);
+}
+
+/* =========================================================
+   TIMETABLE
+   ========================================================= */
+
+.timetable-header {
+  background: rgba(244, 247, 252, 0.75);
+}
+
+.timetable-row {
+  transition: background 0.18s ease;
+}
+
+.timetable-row:hover {
+  background: rgba(235, 243, 255, 0.45);
+}
+
+.week-badge {
+  background: rgba(255, 255, 255, 0.72);
+
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255, 255, 255, 0.9);
+
+  border-radius: 12px;
+
+  box-shadow: var(--shadow-sm);
+}
+
+/* =========================================================
+   UPLOAD
+   ========================================================= */
+
+.upload-card {
+  padding: 20px 24px;
+}
+
+.upload-button {
+  border-radius: 11px;
+}
+
+.upload-message {
+  border-radius: 12px;
+}
+
+.preview-card {
+  border: 1px solid rgba(22, 119, 255, 0.2);
+
+  box-shadow:
+    0 12px 35px rgba(22, 119, 255, 0.08);
+}
+
+/* =========================================================
+   FOCUS / ACCESSIBILITY
+   ========================================================= */
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid rgba(22, 119, 255, 0.18);
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .dashboard aside {
+    width: 220px;
+  }
+
+  .dashboard main {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 650px) {
+  .dashboard aside {
+    display: none;
+  }
+
+  .dashboard main {
+    padding: 16px;
+  }
+
+  .login-card {
+    padding: 30px 24px;
+    border-radius: 20px;
+  }
+
+  .page-top h2,
+  .students-title h2,
+  .reports-title h2,
+  .timetable-title h2 {
+    font-size: 25px;
+  }
+}
+/* =========================================================
+   EDITABLE TIMETABLE
+   ========================================================= */
+
+.timetable-title {
+  gap: 20px;
+}
+
+.timetable-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.add-timetable-button {
+  height: 43px;
+  padding: 0 16px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  border: none;
+  border-radius: 11px;
+
+  background: linear-gradient(
+    135deg,
+    #2184ff,
+    #1261d6
+  );
+
+  color: white;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 20px rgba(22, 119, 255, 0.18);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.add-timetable-button:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 12px 25px rgba(22, 119, 255, 0.25);
+}
+
+.timetable-header,
+.timetable-row {
+  grid-template-columns:
+    120px
+    1.5fr
+    150px
+    220px
+    150px
+    150px;
+}
+
+.timetable-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.edit-timetable-button,
+.delete-timetable-button {
+  height: 35px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  border-radius: 9px;
+
+  cursor: pointer;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.edit-timetable-button {
+  padding: 0 10px;
+
+  border: 1px solid rgba(22, 119, 255, 0.18);
+
+  background: rgba(22, 119, 255, 0.07);
+
+  color: #1261d6;
+}
+
+.edit-timetable-button:hover {
+  background: rgba(22, 119, 255, 0.13);
+  transform: translateY(-1px);
+}
+
+.delete-timetable-button {
+  width: 35px;
+
+  border: 1px solid rgba(229, 72, 77, 0.18);
+
+  background: rgba(229, 72, 77, 0.06);
+
+  color: #df4247;
+}
+
+.delete-timetable-button:hover {
+  background: rgba(229, 72, 77, 0.12);
+  transform: translateY(-1px);
+}
+
+.timetable-loading {
+  min-height: 300px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #7b8799;
+}
+
+/* ---------- MODAL ---------- */
+
+.timetable-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(15, 25, 45, 0.32);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.timetable-modal {
+  width: min(600px, 100%);
+
+  background: rgba(255, 255, 255, 0.92);
+
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+
+  border: 1px solid rgba(255, 255, 255, 0.95);
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 30px 90px rgba(20, 40, 80, 0.2);
+
+  overflow: hidden;
+}
+
+.timetable-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  padding: 24px 25px 20px;
+
+  border-bottom: 1px solid rgba(120, 140, 170, 0.12);
+}
+
+.timetable-modal-header h3 {
+  font-size: 21px;
+  letter-spacing: -0.4px;
+}
+
+.timetable-modal-header p {
+  margin-top: 5px;
+
+  color: #7b8799;
+
+  font-size: 13px;
+}
+
+.close-timetable-modal {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 10px;
+
+  background: rgba(100, 115, 140, 0.08);
+
+  color: #637087;
+
+  cursor: pointer;
+}
+
+.close-timetable-modal:hover {
+  background: rgba(100, 115, 140, 0.14);
+}
+
+.timetable-form {
+  padding: 24px 25px 25px;
+}
+
+.timetable-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 17px;
+}
+
+.timetable-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.timetable-field label {
+  color: #39465b;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.timetable-field input,
+.timetable-field select {
+  width: 100%;
+  height: 45px;
+
+  padding: 0 12px;
+
+  border: 1px solid rgba(120, 140, 170, 0.2);
+
+  border-radius: 11px;
+
+  background: rgba(248, 250, 253, 0.85);
+
+  color: #172033;
+
+  outline: none;
+}
+
+.timetable-field input:focus,
+.timetable-field select:focus {
+  background: white;
+
+  border-color: rgba(22, 119, 255, 0.55);
+
+  box-shadow:
+    0 0 0 4px rgba(22, 119, 255, 0.08);
+}
+
+.timetable-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 25px;
+}
+
+.timetable-cancel-button,
+.timetable-save-button {
+  height: 43px;
+
+  padding: 0 17px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  font-weight: 600;
+}
+
+.timetable-cancel-button {
+  border: 1px solid rgba(120, 140, 170, 0.2);
+
+  background: rgba(245, 247, 250, 0.8);
+
+  color: #56647a;
+}
+
+.timetable-cancel-button:hover {
+  background: #eef1f5;
+}
+
+.timetable-save-button {
+  border: none;
+
+  background: linear-gradient(
+    135deg,
+    #2184ff,
+    #1261d6
+  );
+
+  color: white;
+
+  box-shadow:
+    0 8px 20px rgba(22, 119, 255, 0.18);
+}
+
+.timetable-save-button:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 12px 25px rgba(22, 119, 255, 0.25);
+}
+
+.timetable-save-button:disabled,
+.timetable-cancel-button:disabled,
+.close-timetable-modal:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+@media (max-width: 1100px) {
+  .timetable-header,
+  .timetable-row {
+    grid-template-columns:
+      100px
+      1.4fr
+      130px
+      200px
+      130px
+      140px;
+  }
+}
+
+@media (max-width: 800px) {
+  .timetable-title {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .timetable-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .timetable-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timetable-modal {
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+}
