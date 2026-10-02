@@ -1,0 +1,398 @@
+.counter {
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+  margin-bottom: 24px;
+
+  &:hover {
+    border-color: var(--accent-border);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+.hero {
+  position: relative;
+
+  .base,
+  .framework,
+  .vite {
+    inset-inline: 0;
+    margin: 0 auto;
+  }
+
+  .base {
+    width: 170px;
+    position: relative;
+    z-index: 0;
+  }
+
+  .framework,
+  .vite {
+    position: absolute;
+  }
+
+  .framework {
+    z-index: 1;
+    top: 34px;
+    height: 28px;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
+      scale(1.4);
+  }
+
+  .vite {
+    z-index: 0;
+    top: 107px;
+    height: 26px;
+    width: auto;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
+      scale(0.8);
+  }
+}
+
+#center {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  place-content: center;
+  place-items: center;
+  flex-grow: 1;
+
+  @media (max-width: 1024px) {
+    padding: 32px 20px 24px;
+    gap: 18px;
+  }
+}
+
+#next-steps {
+  display: flex;
+  border-top: 1px solid var(--border);
+  text-align: left;
+
+  & > div {
+    flex: 1 1 0;
+    padding: 32px;
+    @media (max-width: 1024px) {
+      padding: 24px 20px;
+    }
+  }
+
+  .icon {
+    margin-bottom: 16px;
+    width: 22px;
+    height: 22px;
+  }
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+#docs {
+  border-right: 1px solid var(--border);
+
+  @media (max-width: 1024px) {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+#next-steps ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 8px;
+  margin: 32px 0 0;
+
+  .logo {
+    height: 18px;
+  }
+
+  a {
+    color: var(--text-h);
+    font-size: 16px;
+    border-radius: 6px;
+    background: var(--social-bg);
+    display: flex;
+    padding: 6px 12px;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: box-shadow 0.3s;
+
+    &:hover {
+      box-shadow: var(--shadow);
+    }
+    .button-icon {
+      height: 18px;
+      width: 18px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    li {
+      flex: 1 1 calc(50% - 8px);
+    }
+
+    a {
+      width: 100%;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+  }
+}
+
+#spacer {
+  height: 88px;
+  border-top: 1px solid var(--border);
+  @media (max-width: 1024px) {
+    height: 48px;
+  }
+}
+
+.ticks {
+  position: relative;
+  width: 100%;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: -4.5px;
+    border: 5px solid transparent;
+  }
+
+  &::before {
+    left: 0;
+    border-left-color: var(--border);
+  }
+  &::after {
+    right: 0;
+    border-right-color: var(--border);
+  }
+}
+.students-page {
+  min-height: 100vh;
+  padding: 30px 38px;
+  background: #f4f7fb;
+}
+
+.students-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.students-title h2 {
+  font-size: 28px;
+}
+
+.students-title p {
+  color: #718096;
+  margin-top: 5px;
+}
+
+.student-count {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  border: 1px solid #e1e7ef;
+  padding: 11px 16px;
+  border-radius: 8px;
+  color: #1261d6;
+  font-weight: 600;
+}
+
+.students-controls {
+  background: white;
+  border: 1px solid #e1e7ef;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  align-items: end;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.students-controls > div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 300px;
+}
+
+.students-controls label:not(.import-button) {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.students-controls select {
+  height: 43px;
+  border: 1px solid #d8e0eb;
+  border-radius: 7px;
+  padding: 0 12px;
+  background: white;
+}
+
+.import-button {
+  height: 43px;
+  padding: 0 16px;
+  background: #1261d6;
+  color: white;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.student-form-card,
+.students-table-card {
+  background: white;
+  border: 1px solid #e1e7ef;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.student-form-card {
+  padding: 22px;
+}
+
+.student-form-card h3 {
+  margin-bottom: 15px;
+}
+
+.student-form-card form {
+  display: grid;
+  grid-template-columns: 180px 1fr auto auto;
+  gap: 12px;
+}
+
+.student-form-card input {
+  height: 43px;
+  border: 1px solid #d8e0eb;
+  border-radius: 7px;
+  padding: 0 12px;
+  outline: none;
+}
+
+.student-form-card button {
+  height: 43px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 7px;
+  background: #1261d6;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.student-form-card .cancel-button {
+  background: #eef1f5;
+  color: #40516a;
+}
+
+.students-table-header,
+.students-table-row {
+  display: grid;
+  grid-template-columns: 150px 1fr 220px;
+  align-items: center;
+  padding: 15px 24px;
+}
+
+.students-table-header {
+  background: #f7f9fc;
+  color: #68778d;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.students-table-row {
+  border-top: 1px solid #edf0f4;
+  min-height: 60px;
+}
+
+.students-table-row > span {
+  color: #68778d;
+}
+
+.student-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.student-actions button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid #d8e0eb;
+  background: white;
+  color: #1261d6;
+  padding: 7px 11px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.student-actions .delete-student {
+  color: #d43c3c;
+}
+
+.empty-students {
+  padding: 40px;
+  text-align: center;
+  color: #718096;
+}
+
+@media (max-width: 800px) {
+  .students-page {
+    padding: 20px;
+  }
+
+  .students-title {
+    align-items: flex-start;
+    gap: 15px;
+    flex-direction: column;
+  }
+
+  .students-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .students-controls > div {
+    width: 100%;
+  }
+
+  .student-form-card form {
+    grid-template-columns: 1fr;
+  }
+
+  .students-table-header,
+  .students-table-row {
+    grid-template-columns: 80px 1fr;
+    gap: 10px;
+  }
+
+  .student-actions {
+    grid-column: 2;
+  }
+}
